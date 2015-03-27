@@ -1,0 +1,26 @@
+{
+  "name": "influxdb",
+  "version": "0.0.1",
+  "description": "InfluxDB Client",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gaspaio/influxdb.git"
+  },
+  "keywords": [
+    "influx",
+    "influxdb",
+    "time",
+    "series",
+    "client",
+    "db"
+  ],
+  "author": "Rodolfo Ripado <gaspaio@ggmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.53.0",
+    "underscore": "^1.8.2"
+  },
+  "devDependencies": {}
+}
