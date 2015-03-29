@@ -19,16 +19,18 @@ var InfluxDB = module.exports.InfluxDB = function (options) {
 };
 
 
-InfluxDB.prototype.write = function(payload, dbName, callback) {
+InfluxDB.prototype.query = function(query, callback) {
+  if ('undefined' === typeof query) {
+    return;
+  }
+  this.request.query(query, this._parseCallback(callback));
+};
+
+
+InfluxDB.prototype.write = function(payload, callback) {
   if ('undefined' === typeof payload) {
     return;
   }
-  if ('function' === typeof dbName) {
-    callback = dbName;
-    dbName = null;
-  }
-
-  payload.database = dbName || this.options.database;
 
   this.request.write(payload, this._parseCallback(callback));
 };
